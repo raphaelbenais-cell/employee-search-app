@@ -1,0 +1,140 @@
+.home-page {
+  width: 100%;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.hero-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 80px 20px;
+  text-align: center;
+  margin-bottom: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+  position: relative;
+  overflow: hidden;
+  animation: slideIn 0.8s ease-out;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.hero-section h1 {
+  font-size: 56px;
+  color: white;
+  margin: 0;
+  font-weight: 700;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 1;
+}
+
+.employees-section {
+  margin-top: 50px;
+  animation: fadeIn 1s ease-out 0.3s both;
+}
+
+.employees-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 32px;
+  color: #2d3748;
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.employees-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 2px;
+}
+
+.employees-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.loading {
+  text-align: center;
+  padding: 60px;
+  font-size: 20px;
+  color: #667eea;
+  font-weight: 500;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.loading::after {
+  content: '...';
+  animation: dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes dots {
+  0%, 20% {
+    content: '.';
+  }
+  40% {
+    content: '..';
+  }
+  60%, 100% {
+    content: '...';
+  }
+}
+
+.error {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: #e53e3e;
+  background: #fff5f5;
+  border-radius: 12px;
+  border: 2px solid #fc8181;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.no-results {
+  text-align: center;
+  padding: 60px;
+  font-size: 18px;
+  color: #718096;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 60px 20px;
+  }
+  
+  .hero-section h1 {
+    font-size: 40px;
+  }
+  
+  .employees-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .employees-section h2 {
+    font-size: 26px;
+  }
+}
